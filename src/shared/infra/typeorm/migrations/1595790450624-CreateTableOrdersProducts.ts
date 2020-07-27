@@ -4,7 +4,7 @@ import {
   Table,
   TableForeignKey,
 } from 'typeorm';
-// order_id, product_id, quantity, price,
+
 export default class CreateTableOrdersProducts1595790450624
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -55,7 +55,7 @@ export default class CreateTableOrdersProducts1595790450624
         name: 'OrdersProductsOrder',
         columnNames: ['order_id'],
         referencedColumnNames: ['id'],
-        referencedTableName: 'order',
+        referencedTableName: 'orders',
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
       }),
@@ -67,7 +67,7 @@ export default class CreateTableOrdersProducts1595790450624
         name: 'OrdersProductsProduct',
         columnNames: ['order_id'],
         referencedColumnNames: ['id'],
-        referencedTableName: 'order',
+        referencedTableName: 'orders',
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
       }),
